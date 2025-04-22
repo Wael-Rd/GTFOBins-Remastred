@@ -1,4 +1,4 @@
-# GTFOBins Privilege Escalation Tool
+# 🚀✨ AutoGTFOBins Privilege Escalation Tool ✨🚀
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -6,11 +6,11 @@ An advanced automated tool for privilege escalation on Linux systems by exploiti
 
 Created by [Mrx0rd](https://github.com/Wael-Rd)
 
-![GTFOBins Privilege Escalation Tool](https://raw.githubusercontent.com/Wael-Rd/priv-escalation-tools/main/screenshot.png)
+![GTFOBins Privilege Escalation Tool](https://github.com/Wael-Rd/GTFOBins-Remastred/blob/main/Screenshot.png)
 
 ## Overview
 
-The GTFOBins Privilege Escalation Tool is a comprehensive Bash script that automates the process of identifying and exploiting sudo binary permissions to gain root access on Linux systems. It leverages the techniques documented in [GTFOBins](https://gtfobins.github.io/) to automatically test and exploit vulnerable binaries.
+The AutoGTFOBins Privilege Escalation Tool is a comprehensive Bash script that automates the process of identifying and exploiting sudo binary permissions to gain root access on Linux systems. It leverages the techniques documented in [GTFOBins](https://gtfobins.github.io/) to automatically test and exploit vulnerable binaries.
 
 ### Key Features
 
@@ -28,10 +28,10 @@ The GTFOBins Privilege Escalation Tool is a comprehensive Bash script that autom
 
 ```bash
 # Clone the repository
-git clone https://github.com/Wael-Rd/priv-escalation-tools.git
+git clone git@github.com:Wael-Rd/GTFOBins-Remastred.git
 
 # Navigate to the directory
-cd priv-escalation-tools
+cd GTFOBins-Remastred
 
 # Make the script executable
 chmod +x auto-gtfobins-privesc.sh
@@ -49,7 +49,7 @@ Run the script without any arguments to automatically detect and exploit sudo pe
 
 ### Command-line Options
 
-```
+```bash
 Usage: ./auto-gtfobins-privesc.sh [options]
 Options:
   -i, --interactive    Run in interactive mode
